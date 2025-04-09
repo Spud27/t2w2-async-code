@@ -9,10 +9,8 @@
 
 fetch('https://pokeapi.co/api/v2/pokemon/ditto')
     // this .then() handles the promise returned by fetch()
-    .then(response => {
-        return response.text()
-    })
-    // this .then() handles the promise returned by text()
-    .then(text => console.log(text))
+    .then(response => response.json())
+    // this .then() handles the promise returned by json()
+    .then(data => console.log(data.name))
 
 console.log('Awaiting fetch....')
